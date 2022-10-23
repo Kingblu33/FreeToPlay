@@ -34,13 +34,13 @@ const Footer = () => {
                         </a>
                     </div>
                     <div className="px-5 py-2">
-                        <p href="" className="text-base leading-6 text-gray-500 hover:text-gray-900">
+                        <p className="text-base leading-6 text-gray-500 hover:text-gray-900">
                             Terms
                         </p>
                     </div>
                 </nav>
                 <div className="flex justify-center mt-8 space-x-6">
-                    <a href="#" className="text-gray-400 hover:text-gray-500">
+                    <a href="https://www.linkedin.com/in/demmar-allen-94179b194/" className="text-gray-400 hover:text-gray-500">
                         <span className="sr-only">LinkedIn</span>
                         <AiFillLinkedin className='w-6 h-6' />
                     </a>
