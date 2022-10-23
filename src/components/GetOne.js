@@ -22,7 +22,7 @@ const GetOne = () => {
             .catch((error) => {
                 console.log(error)
             })
-    }, [])
+    })
     return (
         <section className="bg-white pt-16">
             <div className="container px-6 py-10 mx-auto">
