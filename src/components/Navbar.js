@@ -12,7 +12,9 @@ const Navbar = () => {
                                 <div aria-hidden="true" className="flex space-x-1">
                                     {/* <div className="h-4 w-4 rounded-full bg-gray-900"></div> */}
                                     <div >
-                                        <img src={logo} className="w-20 h-20" />
+                                        <img src={logo} className="w-20 h-20"
+                                            alt="Logo"
+                                        />
                                     </div>
                                 </div>
                                 <span className="text-base font-bold text-gray-400">GameKnock</span>
@@ -36,7 +38,7 @@ const Navbar = () => {
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="https://www.linkedin.com/in/demmar-allen-94179b194/" target='_blank' className="block md:px-4 transition hover:text-sky-700">
+                                        <a href="https://www.linkedin.com/in/demmar-allen-94179b194/" target='_blank' rel="noreferrer" className="block md:px-4 transition hover:text-sky-700">
                                             <span>About</span>
                                         </a>
                                     </li>

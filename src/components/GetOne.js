@@ -70,7 +70,7 @@ const GetOne = () => {
                         <p className="text-gray-600 dark:text-gray-300">Publisher: {game.publisher}</p>
 
                         <div className="flex items-center justify-between mt-12 lg:justify-start">
-                            <a href={`${game.game_url}`} target="_blank">
+                            <a href={`${game.game_url}`} target="_blank" rel="noreferrer">
                                 <button className="bg-transparent hover:bg-black text-black-700 font-semibold hover:text-white py-4 px-6 border border-black500 hover:border-transparent rounded">
                                     Play Game
                                 </button>

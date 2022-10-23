@@ -27,7 +27,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="mt-12 h-70 mr-0 md:-mr-24 overflow-hidden sm:h-72 md:h-auto md:mt-0 lg:mr-0 lg:-mt-12 md:w-7/12">
-                        <img src={Ichigo} alt="" />
+                        <img src={Ichigo} alt="ichigo" />
                     </div>
                 </div>
             </div>
