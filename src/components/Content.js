@@ -17,7 +17,7 @@ const Content = () => {
             .then((response) => {
                 let data = response.data
                 let slicedData = data.slice(0, 16)
-                console.log(slicedData)
+
                 setGames(slicedData)
             })
 
