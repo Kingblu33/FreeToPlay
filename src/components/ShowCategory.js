@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { AiFillHeart } from 'react-icons/ai'
+import { AiFillHeart, AiOutlineConsoleSql } from 'react-icons/ai'
 
 const ShowCategory = () => {
     const [games, setGames] = useState([])
@@ -15,9 +15,15 @@ const ShowCategory = () => {
         }
     }
 
-    const handleClick = () => {
-        setIsActive(current => !current);
-        console.log(isActive)
+    const handleClick = (id) => {
+        const updatedData = games.map(item => {
+            if (item.id === id) {
+            return { ...item, isActive: !item.isActive }; // Toggle isActive for the clicked item
+        } else {
+            return item;
+        }
+        });
+        setGames(updatedData);
     };
 
     const handleSelect = (e) => {
@@ -29,7 +35,12 @@ const ShowCategory = () => {
             .then((response) => {
                 let data = response.data
                 let slicedData = data.slice(0, 60)
-                setGames(slicedData)
+                const modifiedData =  slicedData.map((data)=>{
+                    return {...data, isActive: false};
+                })
+
+                console.log(modifiedData)
+                setGames(modifiedData)
             })
 
             .catch((error) => {
@@ -72,14 +83,14 @@ const ShowCategory = () => {
                     </nav>
                     {
 
-                        games.map((games, idx) => (
+                        games.map((game, idx) => (
                             <div key={idx} className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
-                                <a href={`/showone/${games.id}`}>
-                                    <img className="hover:grow hover:shadow-lg" src={games.thumbnail} alt="game thubmnail" />
+                                <a href={`/showone/${game.id}`}>
+                                    <img className="hover:grow hover:shadow-lg" src={game.thumbnail} alt="game thubmnail" />
                                 </a>
                                 <div className="pt-3 flex items-center justify-between">
-                                    <p className="">{games.title}</p>
-                                    <AiFillHeart className={isActive ? "h-6 w-6 fill-gray text-red-500 hover:text-grey-500" : "h-6 w-6 fill-gray text-gray-500 hover:text-red-500"} onClick={handleClick} />
+                                    <p className="">{game.title}</p>
+                                    <AiFillHeart className={game.isActive ? "h-6 w-6 fill-gray text-red-500 hover:text-grey-500" : "h-6 w-6 fill-gray text-gray-500 hover:text-red-500"} onClick={()=>handleClick(game.id)} />
                                 </div>
                                 <p className="pt-1 text-gray-900">Free</p>
 
